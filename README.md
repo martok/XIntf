@@ -8,8 +8,8 @@ COM-Style interfaces for cross-platform, cross-language.
 The aim of this project is to provide helper-classes and definitions for binary compatible Microsoft COM-Style interfaces for use with different languages on different platforms, taking advantage of compiler magic as much as possible.
 
 Supported languages so far:
-  * C++ via g++
-  * objectPascal via Delphi & FPC
+  * C++ via g++ & BCB
+  * ObjectPascal via Delphi & FPC
 
 
 
