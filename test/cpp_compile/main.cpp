@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
 #include <iostream>
-#include "interfaces.h"
+#include "../../c++/xintf.h"
 
 #pragma hdrstop
 

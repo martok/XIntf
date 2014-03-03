@@ -1,4 +1,4 @@
-program project1;
+program fpc_compile;
 
 {$mode objfpc}{$H+}
 
