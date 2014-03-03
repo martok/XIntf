@@ -4,7 +4,7 @@
 Cross-Platform COM-style interface support library
 *******************************************************************************/
 
-#include <string.h>
+#include <string>
 
 // GUID
 #define MAKEGUID(a,b,c,d1,d2,d3,d4,d5,d6,d7,d8)   { 0x##a, 0x##b, 0x##c, { 0x##d1, 0x##d2, 0x##d3, 0x##d4, 0x##d5, 0x##d6, 0x##d7, 0x##d8 } }
@@ -40,10 +40,10 @@ Cross-Platform COM-style interface support library
 #define STDMETHODIMPL(method)             STDMETHODIMPL_(HRESULT,method)
 #define STDMETHODIMPL_(return,method)     return STDMETHODCALLTYPE method
 
-#define QUERY_INTERFACE(iid)              if (IID==IID_##iid) { *Obj = (iid*)this; } else
+#define QUERY_INTERFACE(iid)              if (IID==IID_##iid) { *Obj = (iid*)this; this->AddRef(); } else
 #define QUERY_INTERFACE_END               return CInterfacedObject::QueryInterface(IID, Obj); return NO_ERROR;
 
-#define SSupports(intf, iid, var)         (!!intf && (S_OK==intf->QueryInterface(iid, (void**)&var)) && !!var && var->AddRef())
+#define SSupports(intf, iid, var)         (!!intf && (S_OK==intf->QueryInterface(iid, (void**)&var)) && !!var)
 
 #ifdef __GNUC__
   // COMPATIBILITY WITH MSVC/WINDOWS/COM
